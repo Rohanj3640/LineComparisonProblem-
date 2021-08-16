@@ -26,17 +26,15 @@ public class LineComparison {
         int q2 = sc.nextInt();
         sc.close();
 
-        Double lenghtOfLine1 = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));      // calculate the length of first line
-        Double lengthOfLine2 = Math.sqrt(Math.pow(p2 - p1, 2) + Math.pow(q2 - q1, 2));     // calculate the length of second line
+        Double lengthOfLine1 = Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1,2));      // calculate the length of first line
+        Double lengthOfLine2 = Math.sqrt(Math.pow(p2-p1, 2) + Math.pow(q2-q1, 2));     // calculate the length of second line
 
-        System.out.printf("Length of First Line is : %.2f %n", lenghtOfLine1);               // %.2f %n to print only two digit after point
-        System.out.printf("length of Second Line : %.2f %n", lengthOfLine2);           // %.2f %n to print only two digit after point
-
-        boolean ans = lenghtOfLine1.equals(lengthOfLine2);                             // return true if equal unless false
-        if (ans)
-            System.out.println("Both Lines are Equal");
+        int result = lengthOfLine1.compareTo(lengthOfLine2);                          // return 0 , <0 or >0
+        if(result > 0)
+            System.out.println("Length of First end points is Greater than Length of Second end Points");
+        else if(result < 0)
+            System.out.println("Length of First end points is Less than Length of Second end Points");
         else
-            System.out.println("Both Lines are not Equal");
-
+            System.out.println("Both lines are Equal");
     }
 }
